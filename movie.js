@@ -31,6 +31,17 @@ function renderMovieQualities(movie) {
   `;
 }
 
+function getEpisodeLabel(episode) {
+  const episodeName = episode.episode || 'Episode';
+  const episodeTitle = episode.title || '';
+
+  if (!episodeTitle || episodeTitle.trim().toLowerCase() === episodeName.trim().toLowerCase()) {
+    return episodeName;
+  }
+
+  return episodeName + ' - ' + episodeTitle;
+}
+
 function renderSeriesEpisodes(series) {
   const seasons = Array.isArray(series.seasons) ? series.seasons : [];
   if (!seasons.length) {
@@ -47,7 +58,7 @@ function renderSeriesEpisodes(series) {
             ${(season.episodes || []).map((episode) => `
               <a class="download-row episode-row" href="${episode.downloadUrl}" target="_blank" rel="noopener noreferrer">
                 <div>
-                  <strong>${episode.episode || 'Episode'}${episode.title ? ' - ' + episode.title : ''}</strong>
+                  <strong>${getEpisodeLabel(episode)}</strong>
                   <p>${episode.quality || ''}${episode.size ? ' • ' + episode.size : ''}</p>
                 </div>
                 <button>Download</button>
