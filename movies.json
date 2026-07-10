@@ -17,39 +17,27 @@
     ]
   },
   {
-    "id": "pati-patni-aur-woh-do",
-    "title": "Pati Patni Aur Woh Do",
-    "type": "movie",
-    "language": "Hindi",
-    "category": "Comedy",
-    "year": "2026",
-    "poster": "assets/posters/pati-patni-aur-woh-do.jpg",
-    "description": "Pati Patni Aur Woh Do movie download.",
-    "qualities": [
-      {
-        "quality": "1080p",
-        "size": "2.04 GB",
-        "downloadUrl": "https://drive.google.com/file/d/17VHvBKlifFdzu1aHJubmLB9KGvHJXi24/view?usp=sharing"
-      }
-    ]
-  },
- {
-    "id": "pati-patni-aur-woh-do",
-    "title": "Pati Patni Aur Woh Do",
-    "type": "movie",
-    "language": "Hindi",
-    "category": "Comedy",
-    "year": "2026",
-    "poster": "assets/posters/pati-patni-aur-woh-do.jpg",
-    "description": "Pati Patni Aur Woh Do movie download.",
-    "qualities": [
-      {
-        "quality": "720p",
-        "size": "738 MB",
-        "downloadUrl": "https://drive.google.com/file/d/1gcFlznAK46VLvN3kajBahRZWwxWMhH4o/view?usp=sharing"
-      }
-    ]
-  },
+  "id": "pati-patni-aur-woh-do",
+  "title": "Pati Patni Aur Woh Do",
+  "type": "movie",
+  "language": "Hindi",
+  "category": "Comedy",
+  "year": "2026",
+  "poster": "assets/posters/pati-patni-aur-woh-do.jpg",
+  "description": "Pati Patni Aur Woh Do movie download.",
+  "qualities": [
+    {
+      "quality": "720p",
+      "size": "738 MB",
+      "downloadUrl": "https://drive.google.com/file/d/1gcF1znAK46VLvN3KajBahnRZWWXWmH4o/view?usp=sharing"
+    },
+    {
+      "quality": "1080p",
+      "size": "2.04 GB",
+      "downloadUrl": "https://drive.google.com/file/d/17VHvBKlifFdzu1aHJubmLB9KGvHJXi24/view?usp=sharing"
+    }
+  ]
+},
 {
     "id": "Ikka",
     "title": "Ikka",
