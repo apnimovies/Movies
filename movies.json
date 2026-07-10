@@ -2,6 +2,7 @@
   {
     "id": "mukhbir",
     "title": "Mukhbir",
+    "type": "movie",
     "language": "Hindi",
     "category": "Drama",
     "year": "2026",
@@ -18,6 +19,7 @@
   {
     "id": "pati-patni-aur-woh-do",
     "title": "Pati Patni Aur Woh Do",
+    "type": "movie",
     "language": "Hindi",
     "category": "Comedy",
     "year": "2026",
@@ -34,6 +36,7 @@
   {
     "id": "peddi",
     "title": "Peddi",
+    "type": "movie",
     "language": "Hindi",
     "category": "Action",
     "year": "2026",
@@ -44,6 +47,65 @@
         "quality": "1080p",
         "size": "3.64 GB",
         "downloadUrl": "https://drive.google.com/file/d/1MhlcnKpoT2gIY9vfoLOzehChi-J54os5/view?usp=sharing"
+      }
+    ]
+  },
+  {
+    "id": "pritam-and-pedro",
+    "title": "Pritam and Pedro",
+    "type": "series",
+    "language": "Hindi",
+    "category": "Drama",
+    "year": "2026",
+    "poster": "assets/posters/pritam-and-pedro.jpg",
+    "description": "Pritam and Pedro Season 1 download.",
+    "seasons": [
+      {
+        "season": "Season 1",
+        "episodes": [
+          {
+            "episode": "Episode 1",
+            "title": "Episode 1",
+            "quality": "720p",
+            "size": "379.9 MB",
+            "downloadUrl": "https://drive.google.com/file/d/1LOycjw1B_fy-NNaE2-YN6pQlm64dzJtn/view?usp=sharing"
+          },
+          {
+            "episode": "Episode 2",
+            "title": "Episode 2",
+            "quality": "720p",
+            "size": "348.7 MB",
+            "downloadUrl": "https://drive.google.com/file/d/1r9JRBy6AFUM0Ok9gqL1EHMy4Obp5J_nd/view?usp=sharing"
+          },
+          {
+            "episode": "Episode 3",
+            "title": "Episode 3",
+            "quality": "720p",
+            "size": "355.3 MB",
+            "downloadUrl": "https://drive.google.com/file/d/1bXYCb48xIOfpKIJ1JJo-Sn9SGPAw2U9p/view?usp=sharing"
+          },
+          {
+            "episode": "Episode 4",
+            "title": "Episode 4",
+            "quality": "720p",
+            "size": "346 MB",
+            "downloadUrl": "https://drive.google.com/file/d/1zDeyuSHKM8fZuHUxC1C4jo9fRb_hnNEi/view?usp=sharing"
+          },
+          {
+            "episode": "Episode 5",
+            "title": "Episode 5",
+            "quality": "720p",
+            "size": "391.5 MB",
+            "downloadUrl": "https://drive.google.com/file/d/1QPPAP011WV2bbToc7fi-vbqcbUntZSxQ/view?usp=sharing"
+          },
+          {
+            "episode": "Episode 6",
+            "title": "Episode 6",
+            "quality": "720p",
+            "size": "373.6 MB",
+            "downloadUrl": "https://drive.google.com/file/d/1by9_3gErhiT0JedV1V25mmv9EnbuPHz8/view?usp=sharing"
+          }
+        ]
       }
     ]
   }
