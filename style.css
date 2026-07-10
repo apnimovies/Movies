@@ -244,3 +244,48 @@ body {
     font-size: 28px;
   }
 }
+
+.poster-wrap {
+  position: relative;
+}
+
+.type-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(13, 110, 253, 0.92);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.season-list {
+  display: grid;
+  gap: 18px;
+  margin-top: 12px;
+}
+
+.season-card {
+  border: 1px solid #d9e5f6;
+  border-radius: 18px;
+  background: #f8fbff;
+  padding: 14px;
+}
+
+.season-title {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: #102033;
+}
+
+.episode-list {
+  display: grid;
+  gap: 10px;
+}
+
+.episode-row {
+  background: #fff;
+}

@@ -5,9 +5,64 @@ function getMovieId() {
   return params.get('id');
 }
 
+function getItemType(item) {
+  return item.type === 'series' ? 'Web Series' : 'Movie';
+}
+
+function renderMovieQualities(movie) {
+  const qualities = Array.isArray(movie.qualities) ? movie.qualities : [];
+  if (!qualities.length) {
+    return '<div class="error-box">Is movie ka download link abhi add nahi hai.</div>';
+  }
+
+  return `
+    <h3>Download Quality</h3>
+    <div class="quality-list">
+      ${qualities.map((q) => `
+        <a class="download-row" href="${q.downloadUrl}" target="_blank" rel="noopener noreferrer">
+          <div>
+            <strong>${q.quality || 'Download'}</strong>
+            <p>${q.size || ''}</p>
+          </div>
+          <button>Download</button>
+        </a>
+      `).join('')}
+    </div>
+  `;
+}
+
+function renderSeriesEpisodes(series) {
+  const seasons = Array.isArray(series.seasons) ? series.seasons : [];
+  if (!seasons.length) {
+    return '<div class="error-box">Is web series ke episodes abhi add nahi hain.</div>';
+  }
+
+  return `
+    <h3>Episodes</h3>
+    <div class="season-list">
+      ${seasons.map((season) => `
+        <div class="season-card">
+          <div class="season-title">${season.season || 'Season'}</div>
+          <div class="episode-list">
+            ${(season.episodes || []).map((episode) => `
+              <a class="download-row episode-row" href="${episode.downloadUrl}" target="_blank" rel="noopener noreferrer">
+                <div>
+                  <strong>${episode.episode || 'Episode'}${episode.title ? ' - ' + episode.title : ''}</strong>
+                  <p>${episode.quality || ''}${episode.size ? ' • ' + episode.size : ''}</p>
+                </div>
+                <button>Download</button>
+              </a>
+            `).join('')}
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
+
 async function loadMovieDetail() {
   try {
-    const response = await fetch('movies.json?v=2');
+    const response = await fetch('movies.json?v=' + Date.now());
     const movies = await response.json();
     const movie = movies.find((item) => item.id === getMovieId());
 
@@ -23,24 +78,14 @@ async function loadMovieDetail() {
       </div>
       <div class="detail-content">
         <div class="badge-row">
-          <span>${movie.language || 'Movie'}</span>
+          <span>${getItemType(movie)}</span>
+          <span>${movie.language || ''}</span>
           <span>${movie.category || 'General'}</span>
           <span>${movie.year || ''}</span>
         </div>
         <h2>${movie.title}</h2>
         <p class="description">${movie.description || ''}</p>
-        <h3>Download Quality</h3>
-        <div class="quality-list">
-          ${movie.qualities.map((q) => `
-            <a class="download-row" href="${q.downloadUrl}" target="_blank" rel="noopener noreferrer">
-              <div>
-                <strong>${q.quality}</strong>
-                <p>${q.size || ''}</p>
-              </div>
-              <button>Download</button>
-            </a>
-          `).join('')}
-        </div>
+        ${movie.type === 'series' ? renderSeriesEpisodes(movie) : renderMovieQualities(movie)}
       </div>
     `;
   } catch (error) {
