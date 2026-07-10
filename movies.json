@@ -69,9 +69,13 @@
         "quality": "1080p",
         "size": "3.64 GB",
         "downloadUrl": "https://drive.google.com/file/d/1MhlcnKpoT2gIY9vfoLOzehChi-J54os5/view?usp=sharing"
-      }
-    ]
-  },
+      },{
+      "quality": "480p",
+      "size": "640 MB",
+      "downloadUrl":"https://drive.google.com/file/d/1kypVcaND0xeA8U2-aoITnxHI3sEF9B2i/view?usp=sharing"
+    }
+  ]
+},
   {
     "id": "pritam-and-pedro",
     "title": "Pritam and Pedro",
