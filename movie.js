@@ -43,6 +43,16 @@ function imageFallback(img) {
   `);
 }
 
+
+function getDownloadUrl(url) {
+  const value = String(url || '').trim();
+  const match = value.match(/drive\.google\.com\/file\/d\/([^/]+)/);
+  if (match && match[1]) {
+    return `https://drive.google.com/uc?export=download&id=${match[1]}`;
+  }
+  return value || '#';
+}
+
 function copyLink(url) {
   navigator.clipboard.writeText(url).then(() => {
     showToast('Link copied');
@@ -81,8 +91,8 @@ function renderMovieDownloads(movie) {
               <p>${escapeHtml(q.size || '')}</p>
             </div>
             <div class="download-actions">
-              <a href="${escapeHtml(q.downloadUrl || '#')}" target="_blank" rel="noopener noreferrer">Open</a>
-              <button type="button" data-copy-url="${escapeHtml(q.downloadUrl || '')}">Copy</button>
+              <a class="view-link" href="${escapeHtml(q.downloadUrl || '#')}" target="_blank" rel="noopener noreferrer">View</a>
+              <a class="download-link" href="${escapeHtml(getDownloadUrl(q.downloadUrl))}" target="_blank" rel="noopener noreferrer">Download</a>
             </div>
           </div>
         `).join('')}
@@ -125,8 +135,8 @@ function renderSeriesEpisodes(series) {
                   <p>${escapeHtml(episode.quality || '')}${episode.size ? ' • ' + escapeHtml(episode.size) : ''}</p>
                 </div>
                 <div class="download-actions">
-                  <a href="${escapeHtml(episode.downloadUrl || '#')}" target="_blank" rel="noopener noreferrer">Open</a>
-                  <button type="button" data-copy-url="${escapeHtml(episode.downloadUrl || '')}">Copy</button>
+                  <a class="view-link" href="${escapeHtml(episode.downloadUrl || '#')}" target="_blank" rel="noopener noreferrer">View</a>
+                  <a class="download-link" href="${escapeHtml(getDownloadUrl(episode.downloadUrl))}" target="_blank" rel="noopener noreferrer">Download</a>
                 </div>
               </div>
             `).join('')}
@@ -214,12 +224,8 @@ async function loadMovieDetail() {
             <p class="ott-description">${escapeHtml(movie.description || '')}</p>
             <div class="ott-stat-row">
               <div class="ott-stat"><strong>${escapeHtml(getQualityText(movie))}</strong><span>Available</span></div>
-              <div class="ott-stat"><strong>Google Drive</strong><span>Preview / Download</span></div>
             </div>
-            <div class="ott-action-row">
-              ${movie.trailerUrl ? `<a class="trailer-btn" href="${escapeHtml(movie.trailerUrl)}" target="_blank" rel="noopener noreferrer">Watch Trailer</a>` : ''}
-              <a class="primary-cta" href="#downloadSection">Go to Downloads</a>
-            </div>
+            ${movie.trailerUrl ? `<div class="ott-action-row"><a class="trailer-btn" href="${escapeHtml(movie.trailerUrl)}" target="_blank" rel="noopener noreferrer">Watch Trailer</a></div>` : ''}
           </div>
         </div>
       </section>
