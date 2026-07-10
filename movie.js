@@ -7,7 +7,7 @@ function getMovieId() {
 
 async function loadMovieDetail() {
   try {
-    const response = await fetch('movies.json');
+    const response = await fetch('movies.json?v=2');
     const movies = await response.json();
     const movie = movies.find((item) => item.id === getMovieId());
 

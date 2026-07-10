@@ -5,7 +5,7 @@ let allMovies = [];
 
 async function loadMovies() {
   try {
-    const response = await fetch('movies.json');
+    const response = await fetch('movies.json?v=2');
     allMovies = await response.json();
     renderMovies(allMovies);
   } catch (error) {
