@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MovieHub Admin Helper</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="back-link" href="index.html">← Back</a>
+    <div class="brand small-brand">
+      <div class="logo">M</div>
+      <div>
+        <h1>Admin Helper</h1>
+        <p>Full movies.json generator</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container admin-container">
+    <section class="section-head">
+      <h2>JSON Update Helper</h2>
+      <p>Yaha movie ya web series details fill karo. Ye poora updated movies.json bana dega.</p>
+    </section>
+
+    <section class="admin-grid">
+      <div class="admin-panel">
+        <h3>1. Current JSON</h3>
+        <p class="admin-note">Page open hote hi current movies.json load karne ki koshish karega. Agar nahi aaye to manually paste karo.</p>
+        <div class="admin-actions">
+          <button type="button" id="loadJsonBtn">Reload movies.json</button>
+          <button type="button" id="formatJsonBtn">Format JSON</button>
+        </div>
+        <textarea id="currentJson" class="json-textarea" spellcheck="false" placeholder="Current movies.json yaha paste/load hoga..."></textarea>
+        <div id="jsonStatus" class="admin-status"></div>
+      </div>
+
+      <div class="admin-panel">
+        <h3>2. Add / Update Title</h3>
+        <div class="form-grid">
+          <label>Type
+            <select id="itemType">
+              <option value="movie">Movie</option>
+              <option value="series">Web Series</option>
+            </select>
+          </label>
+          <label>ID
+            <input id="itemId" type="text" placeholder="example: new-movie" />
+          </label>
+          <label>Title
+            <input id="title" type="text" placeholder="Movie / Series name" />
+          </label>
+          <label>Language
+            <input id="language" type="text" value="Hindi" />
+          </label>
+          <label>Category
+            <input id="category" type="text" placeholder="Action, Comedy, Drama" />
+          </label>
+          <label>Year
+            <input id="year" type="text" value="2026" />
+          </label>
+          <label class="full-field">Poster path
+            <input id="poster" type="text" placeholder="assets/posters/new-movie.jpg" />
+          </label>
+          <label class="full-field">Description
+            <textarea id="description" placeholder="Short description"></textarea>
+          </label>
+        </div>
+
+        <div id="movieFields" class="type-section">
+          <h4>Movie qualities</h4>
+          <p class="admin-note">Har line ka format: quality | size | drive link</p>
+          <textarea id="qualitiesText" placeholder="720p | 738 MB | https://drive.google.com/file/d/.../view?usp=sharing&#10;1080p | 2.04 GB | https://drive.google.com/file/d/.../view?usp=sharing"></textarea>
+        </div>
+
+        <div id="seriesFields" class="type-section" style="display:none;">
+          <h4>Web series episodes</h4>
+          <label>Season name
+            <input id="seasonName" type="text" value="Season 1" />
+          </label>
+          <p class="admin-note">Har line ka format: episode | title | quality | size | drive link</p>
+          <textarea id="episodesText" placeholder="Episode 1 | Episode 1 | 720p | 379.9 MB | https://drive.google.com/file/d/.../view?usp=sharing&#10;Episode 2 | Episode 2 | 720p | 348.7 MB | https://drive.google.com/file/d/.../view?usp=sharing"></textarea>
+        </div>
+
+        <label class="checkbox-line">
+          <input id="replaceSameId" type="checkbox" checked />
+          Same ID mile to old item replace kar do
+        </label>
+
+        <div class="admin-actions">
+          <button type="button" id="generateBtn">Generate Full JSON</button>
+          <button type="button" id="clearFormBtn" class="secondary-btn">Clear Form</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="admin-panel output-panel">
+      <h3>3. Updated movies.json</h3>
+      <p class="admin-note">Is output ko copy karke movies.json me paste karo, ya Download button se movies.json file save karo.</p>
+      <textarea id="outputJson" class="json-textarea output-textarea" spellcheck="false" placeholder="Generated full JSON yaha aayega..."></textarea>
+      <div class="admin-actions">
+        <button type="button" id="copyBtn">Copy JSON</button>
+        <button type="button" id="downloadBtn">Download movies.json</button>
+      </div>
+      <div id="outputStatus" class="admin-status"></div>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
