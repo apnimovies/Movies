@@ -1,0 +1,13 @@
+cd C:\Users\Motisons\OneDrive\Desktop\free-movie-site
+git add .
+git commit -m "add new movie"
+git push
+
+cd C:\Users\Motisons\OneDrive\Desktop\free-movie-site
+git add movies.json
+git commit -m "update movies json"
+git push
+
+git add .
+git commit -m "add new movie"
+git push
