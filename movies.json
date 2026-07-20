@@ -1,21 +1,22 @@
-[{
-  "id": "pati-patni-aur-woh-do",
-  "title": "Pati Patni Aur Woh Do",
-  "type": "movie",
-  "language": "Hindi",
-  "category": "Comedy",
-  "year": "2026",
-  "poster": "assets/posters/pati-patni-aur-woh-do.jpg",
-  "description": "Pati Patni Aur Woh Do movie download.",
-  "qualities": [
-    {
-      "quality": "720p",
-      "size": "738 MB",
-      "downloadUrl": "https://drive.google.com/file/d/1gcF1znAK46VLvN3KajBahnRZWWXWmH4o/view?usp=sharing"
-    }
-  ]
-},
-{
+[
+  {
+    "id": "pati-patni-aur-woh-do",
+    "title": "Pati Patni Aur Woh Do",
+    "type": "movie",
+    "language": "Hindi",
+    "category": "Comedy",
+    "year": "2026",
+    "poster": "assets/posters/pati-patni-aur-woh-do.jpg",
+    "description": "Pati Patni Aur Woh Do movie download.",
+    "qualities": [
+      {
+        "quality": "720p",
+        "size": "738 MB",
+        "downloadUrl": "https://drive.google.com/file/d/1gcF1znAK46VLvN3KajBahnRZWWXWmH4o/view?usp=sharing"
+      }
+    ]
+  },
+  {
     "id": "Ikka",
     "title": "Ikka",
     "type": "movie",
@@ -43,12 +44,12 @@
     "description": "Peddi movie download.",
     "qualities": [
       {
-      "quality": "480p",
-      "size": "640 MB",
-      "downloadUrl":"https://drive.google.com/file/d/1kypVcaND0xeA8U2-aoITnxHI3sEF9B2i/view?usp=sharing"
-    }
-  ]
-},
+        "quality": "480p",
+        "size": "640 MB",
+        "downloadUrl": "https://drive.google.com/file/d/1kypVcaND0xeA8U2-aoITnxHI3sEF9B2i/view?usp=sharing"
+      }
+    ]
+  },
   {
     "id": "pritam-and-pedro",
     "title": "Pritam and Pedro",
@@ -105,6 +106,23 @@
             "downloadUrl": "https://drive.google.com/file/d/1by9_3gErhiT0JedV1V25mmv9EnbuPHz8/view?usp=sharing"
           }
         ]
+      }
+    ]
+  },
+  {
+    "id": "Dadi Ki Shaadi",
+    "title": "Dadi Ki Shaadi",
+    "type": "movie",
+    "language": "Hindi",
+    "category": "Comedy , Drama",
+    "year": "2026",
+    "poster": "assets/posters/Dadi Ki Shaadi.jpg",
+    "description": "",
+    "qualities": [
+      {
+        "quality": "720p",
+        "size": "820MB",
+        "downloadUrl": "https://drive.google.com/file/d/1YHc43nV6de6MzfP4nnO4LcUYNw42BkON/view?usp=sharing"
       }
     ]
   }
