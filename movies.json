@@ -1,22 +1,4 @@
-[
-  {
-    "id": "mukhbir",
-    "title": "Mukhbir",
-    "type": "movie",
-    "language": "Hindi",
-    "category": "Drama",
-    "year": "2026",
-    "poster": "assets/posters/Mukhbir.jpg",
-    "description": "Mukhbir movie download.",
-    "qualities": [
-      {
-        "quality": "1080p",
-        "size": "2.32 GB",
-        "downloadUrl": "https://drive.google.com/file/d/1-uxQV7IJ5eGzKkx8OyNEkjfb3VzKDE1K/view?usp=sharing"
-      }
-    ]
-  },
-  {
+[{
   "id": "pati-patni-aur-woh-do",
   "title": "Pati Patni Aur Woh Do",
   "type": "movie",
@@ -30,11 +12,6 @@
       "quality": "720p",
       "size": "738 MB",
       "downloadUrl": "https://drive.google.com/file/d/1gcF1znAK46VLvN3KajBahnRZWWXWmH4o/view?usp=sharing"
-    },
-    {
-      "quality": "1080p",
-      "size": "2.04 GB",
-      "downloadUrl": "https://drive.google.com/file/d/17VHvBKlifFdzu1aHJubmLB9KGvHJXi24/view?usp=sharing"
     }
   ]
 },
@@ -66,10 +43,6 @@
     "description": "Peddi movie download.",
     "qualities": [
       {
-        "quality": "1080p",
-        "size": "3.64 GB",
-        "downloadUrl": "https://drive.google.com/file/d/1MhlcnKpoT2gIY9vfoLOzehChi-J54os5/view?usp=sharing"
-      },{
       "quality": "480p",
       "size": "640 MB",
       "downloadUrl":"https://drive.google.com/file/d/1kypVcaND0xeA8U2-aoITnxHI3sEF9B2i/view?usp=sharing"
