@@ -50,6 +50,21 @@ try {
       $formatErrors.Add("$($movie.title): poster path '$expectedPoster' hona chahiye.")
     }
 
+    $trackedPosterMatches = @(git ls-files -- "assets/posters/*" | Where-Object {
+      $trackedBaseName = [System.IO.Path]::GetFileNameWithoutExtension($_)
+      $trackedExtension = [System.IO.Path]::GetExtension($_)
+      (Convert-ToSlug $trackedBaseName) -eq $slug -and $trackedExtension.ToLowerInvariant() -eq ".jpg"
+    })
+
+    if ($LASTEXITCODE -ne 0) {
+      Stop-WithMessage "Git me tracked poster filenames check nahi ho sake."
+    }
+
+    if ($trackedPosterMatches.Count -gt 1) {
+      $formatErrors.Add("$($movie.title): Git me same title ki multiple poster files tracked hain.")
+      continue
+    }
+
     $candidates = @(Get-ChildItem -LiteralPath "assets\posters" -File | Where-Object {
       (Convert-ToSlug $_.BaseName) -eq $slug -and $_.Extension.ToLowerInvariant() -eq ".jpg"
     })
@@ -71,6 +86,18 @@ try {
       Rename-Item -LiteralPath (Join-Path $posterFile.DirectoryName $temporaryName) -NewName $expectedFileName
       $posterFile = Get-Item -LiteralPath (Join-Path $posterFile.DirectoryName $expectedFileName)
       Write-Host "Renamed: $($movie.title) -> $expectedFileName" -ForegroundColor Cyan
+    }
+
+    if ($trackedPosterMatches.Count -eq 1 -and $trackedPosterMatches[0] -cne $expectedPoster) {
+      git rm --cached -- $trackedPosterMatches[0]
+      if ($LASTEXITCODE -ne 0) {
+        Stop-WithMessage "$($movie.title) ka purana Git poster path remove nahi hua."
+      }
+      git add -- $expectedPoster
+      if ($LASTEXITCODE -ne 0) {
+        Stop-WithMessage "$($movie.title) ka correct Git poster path add nahi hua."
+      }
+      Write-Host "Git case fixed: $($trackedPosterMatches[0]) -> $expectedPoster" -ForegroundColor Cyan
     }
 
     try {
