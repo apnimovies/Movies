@@ -6,3 +6,7 @@ git commit -m "update movies json"
 git add .
 git commit -m "add new movie"
 git push
+
+
+
+http://localhost:8000/admin.html
