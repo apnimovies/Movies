@@ -125,5 +125,22 @@
         "downloadUrl": "https://drive.google.com/file/d/1YHc43nV6de6MzfP4nnO4LcUYNw42BkON/view?usp=sharing"
       }
     ]
+  },
+  {
+    "id": "Chand Mera Dil",
+    "title": "Chand Mera Dil",
+    "type": "movie",
+    "language": "Hindi",
+    "category": "Love",
+    "year": "2026",
+    "poster": "assets/posters/chand-mera-dil.jpg",
+    "description": "",
+    "qualities": [
+      {
+        "quality": "1080p",
+        "size": "2.90GB",
+        "downloadUrl": "https://drive.google.com/file/d/1FqOapDEw22_tyeh8NJB9kSrtwC19YuXy/view?usp=sharing"
+      }
+    ]
   }
 ]
