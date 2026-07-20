@@ -10,3 +10,13 @@ git push
 
 
 http://localhost:8000/admin.html
+
+
+cd C:\Users\Motisons\OneDrive\Desktop\free-movie-site
+python -m http.server 8000
+
+
+cd C:\Users\Motisons\OneDrive\Desktop\free-movie-site
+git add movies.json
+git commit -m "update movies data"
+git push
