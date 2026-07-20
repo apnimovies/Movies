@@ -1,0 +1,23 @@
+MOVIE SITE POSTER FIX - APPLY STEPS
+
+1. Is ZIP ke sabhi files/folders ko apne project folder me copy karo:
+   C:\Users\Motisons\OneDrive\Desktop\free-movie-site
+
+2. Replace/merge ke liye Yes select karo.
+
+3. Poster filenames exact ye hone chahiye:
+   assets\posters\dadi-ki-shaadi.jpg
+   assets\posters\chand-mera-dil.jpg
+
+4. Poster recommended format:
+   JPG, portrait 2:3 ratio, 600x900px ya bada.
+
+5. Project root me "Publish Website.bat" double-click karo.
+   Ye JSON format aur missing poster check karke sabhi changes GitHub par push karega.
+
+6. 1-3 minutes baad website par Ctrl+F5 dabao.
+
+IMPORTANT:
+- Nayi movie add karte samay admin.html use karo.
+- Title se ID aur poster path automatic generate honge.
+- Publish Website.bat use karne par movies.json ke saath naye/updated posters bhi push honge.

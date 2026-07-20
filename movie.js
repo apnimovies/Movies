@@ -1,4 +1,5 @@
 const detailBox = document.getElementById('movieDetail');
+const posterCacheVersion = Date.now();
 
 function getMovieId() {
   return new URLSearchParams(window.location.search).get('id');
@@ -18,7 +19,11 @@ function getItemType(item) {
 }
 
 function getPoster(item) {
-  return item.poster || 'assets/posters/no-poster.jpg';
+  const poster = String(item.poster || '').trim().replace(/\\/g, '/');
+  if (!poster) return 'assets/posters/no-poster.jpg';
+  const separator = poster.includes('?') ? '&' : '?';
+  const version = `${item.posterVersion || 'poster'}-${posterCacheVersion}`;
+  return `${encodeURI(poster)}${separator}v=${encodeURIComponent(version)}`;
 }
 
 function getQualityText(item) {

@@ -7,28 +7,35 @@
     "category": "Comedy",
     "year": "2026",
     "poster": "assets/posters/pati-patni-aur-woh-do.jpg",
+    "posterVersion": "20260720-1",
     "description": "Pati Patni Aur Woh Do movie download.",
     "qualities": [
       {
         "quality": "720p",
-        "size": "738 MB",
+        "size": "737.8 MB",
         "downloadUrl": "https://drive.google.com/file/d/1gcF1znAK46VLvN3KajBahnRZWWXWmH4o/view?usp=sharing"
+      },
+      {
+        "quality": "1080p",
+        "size": "2.04 GB",
+        "downloadUrl": "https://drive.google.com/file/d/17VHvBKlifFdzu1aHJubmLB9KGvHJXi24/view?usp=sharing"
       }
     ]
   },
   {
-    "id": "Ikka",
+    "id": "ikka",
     "title": "Ikka",
     "type": "movie",
     "language": "Hindi",
     "category": "Thriller, Drama",
     "year": "2026",
-    "poster": "assets/posters/Ikka.jpg",
+    "poster": "assets/posters/ikka.jpg",
+    "posterVersion": "20260720-1",
     "description": "Ikka movie download.",
     "qualities": [
       {
         "quality": "480p",
-        "size": "413 MB",
+        "size": "412.8 MB",
         "downloadUrl": "https://drive.google.com/file/d/1CtYwFc2Qw99TbGO9zqNc5gZF8lmftFNe/view?usp=sharing"
       }
     ]
@@ -40,12 +47,18 @@
     "language": "Hindi",
     "category": "Action",
     "year": "2026",
-    "poster": "assets/posters/Peddi.jpg",
+    "poster": "assets/posters/peddi.jpg",
+    "posterVersion": "20260720-1",
     "description": "Peddi movie download.",
     "qualities": [
       {
+        "quality": "1080p",
+        "size": "3.64 GB",
+        "downloadUrl": "https://drive.google.com/file/d/1MhlcnKpoT2gIY9vfoLOzehChi-J54os5/view?usp=sharing"
+      },
+      {
         "quality": "480p",
-        "size": "640 MB",
+        "size": "639.3 MB",
         "downloadUrl": "https://drive.google.com/file/d/1kypVcaND0xeA8U2-aoITnxHI3sEF9B2i/view?usp=sharing"
       }
     ]
@@ -58,6 +71,7 @@
     "category": "Drama",
     "year": "2026",
     "poster": "assets/posters/pritam-and-pedro.jpg",
+    "posterVersion": "20260720-1",
     "description": "Pritam and Pedro Season 1 download.",
     "seasons": [
       {
@@ -110,35 +124,37 @@
     ]
   },
   {
-    "id": "Dadi Ki Shaadi",
+    "id": "dadi-ki-shaadi",
     "title": "Dadi Ki Shaadi",
     "type": "movie",
     "language": "Hindi",
-    "category": "Comedy , Drama",
+    "category": "Comedy, Drama",
     "year": "2026",
     "poster": "assets/posters/dadi-ki-shaadi.jpg",
-    "description": "",
+    "posterVersion": "20260720-2",
+    "description": "Dadi Ki Shaadi movie download.",
     "qualities": [
       {
         "quality": "720p",
-        "size": "820MB",
-        "downloadUrl": "https://drive.google.com/file/d/1YHc43nV6de6MzfP4nnO4LcUYNw42BkON/view?usp=sharing"
+        "size": "820 MB",
+        "downloadUrl": "https://drive.google.com/file/d/1YHc43nV6de6MzfP4nnO4LcUYNW42BKON/view?usp=sharing"
       }
     ]
   },
   {
-    "id": "Chand Mera Dil",
+    "id": "chand-mera-dil",
     "title": "Chand Mera Dil",
     "type": "movie",
     "language": "Hindi",
     "category": "Love",
     "year": "2026",
     "poster": "assets/posters/chand-mera-dil.jpg",
-    "description": "",
+    "posterVersion": "20260720-1",
+    "description": "Chand Mera Dil movie download.",
     "qualities": [
       {
         "quality": "1080p",
-        "size": "2.90GB",
+        "size": "2.90 GB",
         "downloadUrl": "https://drive.google.com/file/d/1FqOapDEw22_tyeh8NJB9kSrtwC19YuXy/view?usp=sharing"
       }
     ]

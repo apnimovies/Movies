@@ -111,13 +111,15 @@ body {
 .movie-card img {
   width: 100%;
   aspect-ratio: 2 / 3;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
   display: block;
   background: #dfe8f7;
 }
 
 .poster-wrap {
   position: relative;
+  background: #dfe8f7;
 }
 
 .type-badge {
@@ -224,7 +226,8 @@ body {
 .ott-poster-card img {
   width: 100%;
   aspect-ratio: 2 / 3;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
   display: block;
   background: #dfe8f7;
 }
@@ -442,7 +445,8 @@ body {
 .similar-card img {
   width: 70px;
   height: 96px;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
   border-radius: 12px;
   background: #dfe8f7;
 }
@@ -483,7 +487,7 @@ body {
   box-shadow: 0 14px 38px rgba(28, 68, 120, 0.12);
 }
 
-.detail-poster { width: 100%; border-radius: 18px; aspect-ratio: 2 / 3; object-fit: cover; background: #dfe8f7; }
+.detail-poster { width: 100%; border-radius: 18px; aspect-ratio: 2 / 3; object-fit: contain; object-position: center; background: #dfe8f7; }
 .badge-row { display: flex; gap: 8px; flex-wrap: wrap; }
 .detail-content h2 { font-size: 38px; margin: 16px 0 10px; }
 .description { color: #53667d; line-height: 1.6; }

@@ -2,6 +2,41 @@ const movieGrid = document.getElementById('movieGrid');
 const searchInput = document.getElementById('searchInput');
 const emptyState = document.getElementById('emptyState');
 let allMovies = [];
+const posterCacheVersion = Date.now();
+
+function escapeHtml(value) {
+  return String(value || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+function getPosterUrl(movie) {
+  const poster = String(movie.poster || '').trim().replace(/\\/g, '/');
+  if (!poster) return '';
+  const separator = poster.includes('?') ? '&' : '?';
+  const version = `${movie.posterVersion || 'poster'}-${posterCacheVersion}`;
+  return `${encodeURI(poster)}${separator}v=${encodeURIComponent(version)}`;
+}
+
+function getMissingPoster(title) {
+  const safeTitle = escapeHtml(title || 'Poster');
+  return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900">
+      <rect width="600" height="900" fill="#dfe8f7"/>
+      <text x="300" y="420" text-anchor="middle" font-family="Arial" font-size="38" fill="#607086" font-weight="700">Poster Missing</text>
+      <text x="300" y="475" text-anchor="middle" font-family="Arial" font-size="24" fill="#607086">${safeTitle}</text>
+    </svg>
+  `);
+}
+
+function handlePosterError(image, title) {
+  image.onerror = null;
+  image.src = getMissingPoster(title);
+  image.classList.add('image-missing');
+}
 
 async function loadMovies() {
   try {
@@ -42,17 +77,22 @@ function renderMovies(movies, query = '') {
     card.className = 'movie-card';
     card.href = `movie.html?id=${encodeURIComponent(movie.id)}`;
 
+    const posterUrl = getPosterUrl(movie);
+
     card.innerHTML = `
       <div class="poster-wrap">
-        <img src="${movie.poster}" alt="${movie.title}" />
-        <span class="type-badge">${getItemType(movie)}</span>
+        <img src="${escapeHtml(posterUrl)}" alt="${escapeHtml(movie.title)}" loading="lazy" />
+        <span class="type-badge">${escapeHtml(getItemType(movie))}</span>
       </div>
       <div class="movie-info">
-        <h3>${movie.title}</h3>
-        <p>${getItemSubText(movie)}</p>
-        <span>${movie.category || getItemType(movie)}</span>
+        <h3>${escapeHtml(movie.title)}</h3>
+        <p>${escapeHtml(getItemSubText(movie))}</p>
+        <span>${escapeHtml(movie.category || getItemType(movie))}</span>
       </div>
     `;
+
+    const posterImage = card.querySelector('img');
+    posterImage.addEventListener('error', () => handlePosterError(posterImage, movie.title), { once: true });
 
     movieGrid.appendChild(card);
   });
