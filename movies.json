@@ -158,5 +158,23 @@
         "downloadUrl": "https://drive.google.com/file/d/1FqOapDEw22_tyeh8NJB9kSrtwC19YuXy/view?usp=sharing"
       }
     ]
+  },
+  {
+    "id": "dhak-dhak",
+    "title": "Dhak Dhak",
+    "type": "movie",
+    "language": "Hindi",
+    "category": "Drama",
+    "year": "2023",
+    "poster": "assets/posters/dhak-dhak.jpg",
+    "posterVersion": "1786530036957",
+    "description": "",
+    "qualities": [
+      {
+        "quality": "1080p",
+        "size": "2.78GB",
+        "downloadUrl": "https://drive.google.com/file/d/1XMAUKmqyg1k66vhpUbEx9chIBC8IVzWh/view?usp=sharing"
+      }
+    ]
   }
 ]
