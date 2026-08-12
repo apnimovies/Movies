@@ -176,5 +176,79 @@
         "downloadUrl": "https://drive.google.com/file/d/1XMAUKmqyg1k66vhpUbEx9chIBC8IVzWh/view?usp=sharing"
       }
     ]
+  },
+  {
+    "id": "musafir-cafe",
+    "title": "Musafir Cafe",
+    "type": "series",
+    "language": "Hindi",
+    "category": "Love, Drama",
+    "year": "2026",
+    "poster": "assets/posters/musafir-cafe.jpg",
+    "posterVersion": "1786532898419",
+    "description": "",
+    "seasons": [
+      {
+        "season": "Season 1",
+        "episodes": [
+          {
+            "episode": "Episode 1",
+            "title": "Episode 1",
+            "quality": "720p",
+            "size": "215 MB",
+            "downloadUrl": "https://drive.google.com/file/d/18tt1qTqhiA90vxS57XJyMdJXFQWWzZJ1/view?usp=sharing"
+          },
+          {
+            "episode": "Episode 2",
+            "title": "Episode 2",
+            "quality": "720p",
+            "size": "215 MB",
+            "downloadUrl": "https://drive.google.com/file/d/1Somieh30RlIL8CIATKBkeRXyj260Tkvw/view?usp=sharing"
+          },
+          {
+            "episode": "Episode 3",
+            "title": "Episode 3",
+            "quality": "720p",
+            "size": "215 MB",
+            "downloadUrl": "https://drive.google.com/file/d/1pPkhd0l3llcPiL2EV5xhsTXOGfJPbq6N/view?usp=sharing"
+          },
+          {
+            "episode": "Episode 4",
+            "title": "Episode 4",
+            "quality": "720p",
+            "size": "215 MB",
+            "downloadUrl": "https://drive.google.com/file/d/19aVCA307NQ_UCvHzcxhx4nTPhjBQMUgr/view?usp=sharing"
+          },
+          {
+            "episode": "Episode 5",
+            "title": "Episode 5",
+            "quality": "720p",
+            "size": "215 MB",
+            "downloadUrl": "https://drive.google.com/file/d/1HKfyUePCWh4xQtX4ejzwCpEIUsdUdTjF/view?usp=sharing"
+          },
+          {
+            "episode": "Episode 6",
+            "title": "Episode 6",
+            "quality": "720p",
+            "size": "215 MB",
+            "downloadUrl": "https://drive.google.com/file/d/15w9Vtp-_ImkDq3aiYssl7w9AYdcoplyi/view?usp=sharing"
+          },
+          {
+            "episode": "Episode 7",
+            "title": "Episode 7",
+            "quality": "720p",
+            "size": "215 MB",
+            "downloadUrl": "https://drive.google.com/file/d/1NNQ3Dl1CEy5fg4WYJO-mlWT1r8Vut53k/view?usp=sharing"
+          },
+          {
+            "episode": "Episode 8",
+            "title": "Episode 8",
+            "quality": "720p",
+            "size": "215 MB",
+            "downloadUrl": "https://drive.google.com/file/d/14RWGxvrxN6oE-15E6AMuqYwZfOMWSp5u/view?usp=sharing"
+          }
+        ]
+      }
+    ]
   }
 ]
