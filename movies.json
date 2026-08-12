@@ -250,5 +250,72 @@
         ]
       }
     ]
+  },
+  {
+    "id": "indian-police-force",
+    "title": "Indian Police Force",
+    "type": "series",
+    "language": "Hindi",
+    "category": "Action ,Drama, thriller",
+    "year": "2024",
+    "poster": "assets/posters/indian-police-force.jpg",
+    "posterVersion": "1786540093482",
+    "description": "",
+    "seasons": [
+      {
+        "season": "Season 1",
+        "episodes": [
+          {
+            "episode": "Episode 1",
+            "title": "Episode 1",
+            "quality": "720p",
+            "size": "300 MB",
+            "downloadUrl": "https://drive.google.com/file/d/1qZWTJSILPmmwxRuWpA4T2QsIaQFHG7VL/view?usp=sharing"
+          },
+          {
+            "episode": "Episode 2",
+            "title": "Episode 2",
+            "quality": "720p",
+            "size": "300 MB",
+            "downloadUrl": "https://drive.google.com/file/d/1XnA1nvmZuCAY8qWO6jScNQyUy9Kv0NWD/view?usp=sharing"
+          },
+          {
+            "episode": "Episode 3",
+            "title": "Episode 3",
+            "quality": "720p",
+            "size": "300 MB",
+            "downloadUrl": "https://drive.google.com/file/d/1mZNZBZ4qXkIRgIvAN467H-66wXDAfnx_/view?usp=sharing"
+          },
+          {
+            "episode": "Episode 4",
+            "title": "Episode 4",
+            "quality": "720p",
+            "size": "300 MB",
+            "downloadUrl": "https://drive.google.com/file/d/1rlRWNMsaSGLHIxcIn2QQqmHtR3pZNO0c/view?usp=sharing"
+          },
+          {
+            "episode": "Episode 5",
+            "title": "Episode 5",
+            "quality": "720p",
+            "size": "300 MB",
+            "downloadUrl": "https://drive.google.com/file/d/1Jv1Yds25ADhx42EttihiDCbqbN5xwVdg/view?usp=sharing"
+          },
+          {
+            "episode": "Episode 6",
+            "title": "Episode 6",
+            "quality": "720p",
+            "size": "300 MB",
+            "downloadUrl": "https://drive.google.com/file/d/1S5da2FK1yTyig6z8U8sqSrjALn_dv0_f/view?usp=sharing"
+          },
+          {
+            "episode": "Episode 7",
+            "title": "Episode 7",
+            "quality": "720p",
+            "size": "300 MB",
+            "downloadUrl": "https://drive.google.com/file/d/1Pu0PfW6MebzVDBPnGtxds-FKh1TVF0Vm/view?usp=sharing"
+          }
+        ]
+      }
+    ]
   }
 ]
