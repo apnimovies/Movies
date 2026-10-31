@@ -622,3 +622,34 @@ body {
     font-size: 20px;
   }
 }
+
+
+/* Web push notification controls */
+.notification-btn {
+  border: 1px solid rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.14);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.notification-btn:hover { background: rgba(255,255,255,0.22); }
+.notification-btn:disabled { opacity: .72; cursor: default; }
+.notification-status {
+  display: none;
+  max-width: 1180px;
+  margin: 10px auto 0;
+  padding: 9px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+}
+.notification-status:not(:empty) { display: block; }
+.notification-status.info { background: #eef5ff; color: #27466f; }
+.notification-status.success { background: #eaf8ef; color: #1c6938; }
+.notification-status.error { background: #fff0f0; color: #9b2525; }
+@media (max-width: 760px) {
+  .top-actions { display: grid; grid-template-columns: 1fr; gap: 8px; }
+  .notification-btn { width: 100%; }
+  .notification-status { margin: 8px 12px 0; }
+}

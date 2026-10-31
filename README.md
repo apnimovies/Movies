@@ -45,3 +45,21 @@ GitHub me:
 Repo > Settings > Pages > Deploy from branch > main > /root > Save
 
 Important: sirf owned/licensed/public-domain content ke links share karein.
+
+## New Movie / Web Series Push Notifications
+
+This project now supports browser push notifications through OneSignal.
+
+### One-time setup
+1. Create a OneSignal Web Push app for your published HTTPS/GitHub Pages URL.
+2. Put the OneSignal App ID in `push-config.js`.
+3. Keep the OneSignal API key secret. On the Windows PC used for publishing, run once in PowerShell:
+```powershell
+[Environment]::SetEnvironmentVariable("MOVIEHUB_ONESIGNAL_API_KEY", "PASTE_YOUR_ONESIGNAL_APP_API_KEY", "User")
+```
+4. Re-open PowerShell / the publish BAT after setting the variable.
+5. Publish the site.
+
+Visitors will see an **Enable Notifications** button. Browser permission must be allowed once. After that, when a completely new movie or web series ID is added to `movies.json` and `Publish Website.bat` successfully pushes the update, the publish script sends a push notification containing that title name.
+
+The API key is never placed in website files or GitHub. Only the public OneSignal App ID is stored in `push-config.js`.

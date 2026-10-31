@@ -137,6 +137,29 @@ try {
     }
   }
 
+
+  # Detect only brand-new titles compared with the last published Git version.
+  $newTitles = @()
+  try {
+    $oldJsonRaw = git show HEAD:movies.json 2>$null
+    if ($LASTEXITCODE -eq 0 -and $oldJsonRaw) {
+      $oldMovies = $oldJsonRaw | ConvertFrom-Json
+      $oldIds = @{}
+      foreach ($oldMovie in @($oldMovies)) {
+        if ($oldMovie.id) { $oldIds[[string]$oldMovie.id] = $true }
+      }
+
+      foreach ($movie in @($movies)) {
+        if ($movie.id -and -not $oldIds.ContainsKey([string]$movie.id)) {
+          $newTitles += $movie
+        }
+      }
+    }
+  }
+  catch {
+    $newTitles = @()
+  }
+
   git add -A
   if ($LASTEXITCODE -ne 0) {
     Stop-WithMessage "git add fail hua."
@@ -165,6 +188,57 @@ try {
   git push origin main
   if ($LASTEXITCODE -ne 0) {
     Stop-WithMessage "git push fail hua."
+  }
+
+
+  # Send a push notification for each newly-added title after a successful publish.
+  if ($newTitles.Count -gt 0) {
+    $pushConfigPath = Join-Path $projectRoot "push-config.js"
+    $oneSignalAppId = ""
+    if (Test-Path -LiteralPath $pushConfigPath) {
+      $pushConfigText = Get-Content -LiteralPath $pushConfigPath -Raw
+      $appIdMatch = [regex]::Match($pushConfigText, 'appId\s*:\s*["'']([^"'']+)["'']')
+      if ($appIdMatch.Success) {
+        $oneSignalAppId = $appIdMatch.Groups[1].Value.Trim()
+      }
+    }
+
+    $oneSignalApiKey = [Environment]::GetEnvironmentVariable("MOVIEHUB_ONESIGNAL_API_KEY", "User")
+    if (-not $oneSignalApiKey) {
+      $oneSignalApiKey = [Environment]::GetEnvironmentVariable("MOVIEHUB_ONESIGNAL_API_KEY", "Process")
+    }
+
+    if ($oneSignalAppId -and $oneSignalAppId -ne "PASTE_ONESIGNAL_APP_ID_HERE" -and $oneSignalApiKey) {
+      foreach ($newTitle in $newTitles) {
+        try {
+          $itemType = if ($newTitle.type -eq "series") { "Web Series" } else { "Movie" }
+          $payload = @{
+            app_id = $oneSignalAppId
+            target_channel = "push"
+            included_segments = @("Total Subscriptions")
+            headings = @{ en = "New $itemType Added" }
+            contents = @{ en = "$($newTitle.title) is now available on MovieHub." }
+            url = "movie.html?id=$([uri]::EscapeDataString([string]$newTitle.id))"
+          } | ConvertTo-Json -Depth 6
+
+          Invoke-RestMethod -Method Post `
+            -Uri "https://api.onesignal.com/notifications" `
+            -Headers @{ Authorization = "Key $oneSignalApiKey"; Accept = "application/json" } `
+            -ContentType "application/json; charset=utf-8" `
+            -Body $payload | Out-Null
+
+          Write-Host "Push sent: $($newTitle.title)" -ForegroundColor Cyan
+        }
+        catch {
+          Write-Host "WARNING: Website publish ho gaya, lekin '$($newTitle.title)' ka push send nahi hua: $($_.Exception.Message)" -ForegroundColor Yellow
+        }
+      }
+    }
+    else {
+      Write-Host "WARNING: New title detect hua, lekin OneSignal setup incomplete hai; push skip kiya gaya." -ForegroundColor Yellow
+      Write-Host "- push-config.js me App ID set karo" -ForegroundColor Yellow
+      Write-Host "- Windows User environment variable MOVIEHUB_ONESIGNAL_API_KEY me API Key set karo" -ForegroundColor Yellow
+    }
   }
 
   Write-Host ""
